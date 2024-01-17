@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "535215650742",
+    "firebase_url": "https://provider-98943-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "provider-98943",
+    "storage_bucket": "provider-98943.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535215650742:android:dacb59e1aa71e46f087317",
+        "android_client_info": {
+          "package_name": "com.batchSixteenMafia.sobi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535215650742-h8as9hpkkqdpje47veafpibkv0psru6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.batchSixteenMafia.sobi",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq7IQHhIGajqsMtUlYT57XAwPQ7f4OnUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "535215650742-auh8h2m59fbn0j5jvjlmc09oh520ph97.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flamex"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535215650742:android:ada1165a7087a047087317",
+        "android_client_info": {
+          "package_name": "com.example.flamex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535215650742-9cv65l5iktbum07acdp4iabr39bcndks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flamex",
+            "certificate_hash": "dbc405103bee05f43753ff84cac9b15253d1f55a"
+          }
+        },
+        {
+          "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq7IQHhIGajqsMtUlYT57XAwPQ7f4OnUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "535215650742-auh8h2m59fbn0j5jvjlmc09oh520ph97.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flamex"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535215650742:android:e9e9e381fc2b7832087317",
+        "android_client_info": {
+          "package_name": "com.photos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535215650742-ri0bn9j5dkc0fkvughso6tebcu77lpcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.photos",
+            "certificate_hash": "b85774a92dfc9ce5c22346017666b8f9dbc22d5f"
+          }
+        },
+        {
+          "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq7IQHhIGajqsMtUlYT57XAwPQ7f4OnUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535215650742-7jsd3c7eibqnltic2u9defvq1b5ed2gi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "535215650742-auh8h2m59fbn0j5jvjlmc09oh520ph97.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flamex"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

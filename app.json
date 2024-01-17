@@ -14,17 +14,45 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow App to access your photos.",
+          "savePhotosPermission": "Allow App to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow App to access your photos.",
+        "NSPhotoLibraryAddUsageDescription": "Allow App to save photos."
+      },
+      "bundleIdentifier": "com.batchSixteenMafia.sobi"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "googleServicesFile": "android/app/google-services.json",
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION"
+      ],
+      "package": "com.batchSixteenMafia.sobi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0557f6bc-471e-4f15-b2ee-a01b7a2b4e6c"
+      }
+    },
+    "owner": "withewolf_dev"
   }
 }
