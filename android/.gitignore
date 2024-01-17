@@ -10,6 +10,6 @@ build/
 local.properties
 *.iml
 *.hprof
-
+android/app/google-services.json
 # Bundle artifacts
 *.jsbundle
