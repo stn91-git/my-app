@@ -17,8 +17,22 @@ import MediaMetadataSchema from "./schema/mediaMetaDataSchema";
 import * as Notifications from "expo-notifications";
 import * as Device from "expo-device";
 import Constants from "expo-constants";
+import firestore from "@react-native-firebase/firestore";
+import * as TaskManager from "expo-task-manager";
 
 const { width } = Dimensions.get("window");
+
+const BACKGROUND_NOTIFICATION_TASK = "BACKGROUND-NOTIFICATION-TASK";
+
+TaskManager.defineTask(
+  BACKGROUND_NOTIFICATION_TASK,
+  async ({ data, error, executionInfo }) => {
+    if (data) {
+      // Handle the received notification
+      console.log("Received notification:", data);
+    }
+  }
+);
 
 export default function App() {
   const [albums, setAlbums] = useState<MediaLibrary.Album[]>([]);
@@ -28,6 +42,7 @@ export default function App() {
     useState<Notifications.Notification>();
   const notificationListener = useRef<MediaLibrary.Subscription>();
   const responseListener = useRef<MediaLibrary.Subscription>();
+  const bgListener = useRef<MediaLibrary.Subscription>();
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -68,7 +83,7 @@ export default function App() {
     notificationListener.current =
       Notifications.addNotificationReceivedListener((notification) => {
         setNotification(notification);
-
+        writeToFirestore();
         console.log(notification, "notification");
       });
 
@@ -157,7 +172,7 @@ export default function App() {
         },
       },
 
-      trigger: { seconds: datePlus5HoursInSeconds },
+      trigger: { seconds: 20, repeats: true },
     });
   }
 
@@ -178,6 +193,15 @@ export default function App() {
   //     keyExtractor={(album) => album.id}
   //   />
   // );
+
+  async function writeToFirestore() {
+    const currentTime = getCurrentTime();
+
+    firestore().collection("Users").add({
+      name: currentTime,
+      age: 32,
+    });
+  }
   return (
     <View style={{ flex: 1, paddingTop: 50 }}>
       {/* <StatusBar translucent /> */}
@@ -185,7 +209,7 @@ export default function App() {
       {/* <PhotosGridx albumId={"-1739773001"} /> */}
 
       <Button
-        title="Press to schedule a notification"
+        title="Press to schedule a "
         onPress={async () => {
           await schedulePushNotification();
         }}

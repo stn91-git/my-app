@@ -10,19 +10,23 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
+    "@react-native-firebase/app": "^18.7.3",
+    "@react-native-firebase/firestore": "^18.7.3",
     "expo": "~49.0.15",
+    "expo-constants": "~14.4.2",
     "expo-dev-client": "^2.4.12",
+    "expo-device": "~5.4.0",
     "expo-media-library": "~15.4.1",
+    "expo-notifications": "~0.20.1",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
     "react-native-web": "~0.19.6",
     "realm": "^12.5.1",
-    "expo-splash-screen": "~0.20.5",
-    "expo-notifications": "~0.20.1",
-    "expo-device": "~5.4.0",
-    "expo-constants": "~14.4.2"
+    "zustand": "^4.4.7",
+    "expo-task-manager": "~11.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
