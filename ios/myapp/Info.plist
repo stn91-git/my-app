@@ -33,6 +33,12 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
+          <string>com.googleusercontent.apps.535215650742-rpt8ebmh1aeogcu9vnu37d8tqkgm223e</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
           <string>exp+my-app</string>
         </array>
       </dict>
@@ -58,6 +64,10 @@
     <string>Allow App to save photos.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Allow App to access your photos.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>fetch</string>
+    </array>
     <key>UILaunchStoryboardName</key>
     <string>SplashScreen</string>
     <key>UIRequiredDeviceCapabilities</key>

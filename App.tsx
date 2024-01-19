@@ -19,20 +19,14 @@ import * as Device from "expo-device";
 import Constants from "expo-constants";
 import firestore from "@react-native-firebase/firestore";
 import * as TaskManager from "expo-task-manager";
+import BackgroundFetch from "react-native-background-fetch";
+import { MyHeadlessTask } from "./utils/background-jobs";
 
 const { width } = Dimensions.get("window");
 
-const BACKGROUND_NOTIFICATION_TASK = "BACKGROUND-NOTIFICATION-TASK";
+// Register your BackgroundFetch HeadlessTask
 
-TaskManager.defineTask(
-  BACKGROUND_NOTIFICATION_TASK,
-  async ({ data, error, executionInfo }) => {
-    if (data) {
-      // Handle the received notification
-      console.log("Received notification:", data);
-    }
-  }
-);
+BackgroundFetch.registerHeadlessTask(MyHeadlessTask);
 
 export default function App() {
   const [albums, setAlbums] = useState<MediaLibrary.Album[]>([]);
@@ -45,6 +39,35 @@ export default function App() {
   const bgListener = useRef<MediaLibrary.Subscription>();
 
   useEffect(() => {
+    BackgroundFetch.configure(
+      {
+        minimumFetchInterval: 15,
+        forceAlarmManager: true,
+        startOnBoot: true,
+        stopOnTerminate: false,
+        requiredNetworkType: BackgroundFetch.NETWORK_TYPE_ANY,
+        requiresCharging: false,
+        requiresBatteryNotLow: false,
+        requiresDeviceIdle: false,
+        requiresStorageNotLow: false,
+      },
+      async (taskId) => {
+        // <-- Event callback
+        // console.log("[BackgroundFetch] taskId: ", taskId);
+        await firestore().collection("Background").add({
+          name: "bg time",
+          age: 32,
+        });
+        BackgroundFetch.finish(taskId);
+      },
+      async (taskId) => {
+        // <-- Task timeout callback
+        // This task has exceeded its allowed running-time.
+        // You must stop what you're doing and immediately .finish(taskId)
+        BackgroundFetch.finish(taskId);
+      }
+    );
+
     const fetchAlbums = async () => {
       const { status } = await MediaLibrary.requestPermissionsAsync();
       if (status !== "granted") {
@@ -172,7 +195,7 @@ export default function App() {
         },
       },
 
-      trigger: { seconds: 20, repeats: true },
+      trigger: { minute: 15, repeats: true },
     });
   }
 

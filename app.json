@@ -16,6 +16,7 @@
     ],
     "plugins": [
       "@react-native-firebase/app",
+      "react-native-background-fetch",
       [
         "expo-media-library",
         {
@@ -23,16 +24,9 @@
           "savePhotosPermission": "Allow App to save photos.",
           "isAccessMediaLocationEnabled": true
         }
-      ]
+      ],
+      "react-native-background-fetch"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "Allow App to access your photos.",
-        "NSPhotoLibraryAddUsageDescription": "Allow App to save photos."
-      },
-      "bundleIdentifier": "com.batchSixteenMafia.sobi"
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -54,6 +48,16 @@
         "projectId": "0557f6bc-471e-4f15-b2ee-a01b7a2b4e6c"
       }
     },
-    "owner": "withewolf_dev"
+    "owner": "withewolf_dev",
+    "ios": {
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow App to access your photos.",
+        "NSPhotoLibraryAddUsageDescription": "Allow App to save photos."
+      },
+      "bundleIdentifier": "com.batchSixteenMafia.sobi",
+      "googleServicesFile": "ios/myapp/GoogleService-Info.plist"
+    }
   }
 }
+
+
